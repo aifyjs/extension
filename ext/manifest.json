@@ -20,7 +20,7 @@
     "geolocation"
   ],
   "omnibox": {
-    "keyword": "extensionizr"
+    "keyword": "aify"
   },
   "content_scripts": [
     {
