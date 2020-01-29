@@ -1,0 +1,45 @@
+{
+  "name": "Aify",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "The browser extension bringing AI to your website.",
+  "homepage_url": "https://aifyjs.github.io",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "default_locale": "en",
+  "page_action": {
+    "default_icon": "icons/icon19.png",
+    "default_title": "page action demo",
+    "default_popup": "src/page_action/page_action.html"
+  },
+  "permissions": [
+    "tts",
+    "geolocation"
+  ],
+  "omnibox": {
+    "keyword": "extensionizr"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "css": [
+        "src/inject/inject.css"
+      ]
+    },
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "js/jquery/jquery.min.js",
+        "js/aify.js",
+        "src/inject/inject.js"
+      ]
+    }
+  ]
+}
