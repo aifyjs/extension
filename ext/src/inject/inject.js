@@ -1,26 +1,37 @@
 chrome.extension.sendMessage({}, function(response) {
 	var readyStateCheckInterval = setInterval(function() {
-	if (document.readyState === "complete") {
-		clearInterval(readyStateCheckInterval);
+		if (document.readyState === "complete") {
+			clearInterval(readyStateCheckInterval);
 
-		// ----------------------------------------------------------
-		// This part of the script triggers when page is done loading
-		console.log("Main bola hey");
-		// ----------------------------------------------------------
+			// ----------------------------------------------------------
+			// This part of the script triggers when page is done loading
+			
+			// ----------------------------------------------------------
 
-		var ai = new aifyjs();
+			chrome.storage.sync.get({
+			    language: 'en',
+			    extstate: true
+			}, function(items) {
+			    var lang = items.language;
+			    var state = items.extstate;
 
-		ai.labels();
+			    if(state){
 
-		console.log("Main bola 2");
+			    	console.log("Running AIFY");
 
-		ai.captions();
+					var ai = new aifyjs();
 
-		console.log("Main bola 3");
+					ai.labels();
 
-		window.setTimeout(function(){ai.displayCaptions();}, 5000);
-		window.setTimeout(function(){ai.displayLabels();}, 5000);
-
-	}
+					ai.captions();
+					
+				}
+				else{
+					console.log("Not running AIFY");
+				}
+			    
+			});
+		}
 	}, 10);
 });
+

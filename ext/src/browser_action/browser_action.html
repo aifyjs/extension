@@ -10,8 +10,26 @@
 		font-size: 2em;
 	}
 </style>
-
 <div id="mainPopup">
-<h1>Hello extensionizr!</h1>
-<p>To shut this popup down, edit the manifest file and remove the "default popup" key. To edit it, just edit ext/browser_action/browser_action.html. The CSS is there, too.</p>
+<h1>aify.extension</h1>
+<hr>
+<form action="" method="post">
+	Extension state:
+	<label>
+	  <input type="checkbox" id="extstate">
+	  Active
+	</label>
+<br><br>
+Language:
+  <select name="language" id="language">
+    <option value="en">English</option>
+    <option value="hi">Hindi</option>
+    <option value="bn">Bengali</option>
+  </select>
+  <br><br>
+  <div id="status"></div>
+
+  <button id="save">Save</button>
+</form>
 </div>
+<script src="browser.js"></script>

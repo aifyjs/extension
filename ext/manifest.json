@@ -10,14 +10,15 @@
     "128": "icons/icon128.png"
   },
   "default_locale": "en",
-  "page_action": {
+  "browser_action": {
     "default_icon": "icons/icon19.png",
     "default_title": "AIFY by The Code Foundation",
-    "default_popup": "src/page_action/page_action.html"
+    "default_popup": "src/browser_action/browser_action.html"
   },
   "permissions": [
     "tts",
-    "geolocation"
+    "geolocation",
+    "storage"
   ],
   "omnibox": {
     "keyword": "aify"
@@ -38,7 +39,8 @@
       "js": [
         "js/jquery/jquery.min.js",
         "js/aify.js",
-        "src/inject/inject.js"
+        "src/inject/inject.js",
+        "src/browser_action/browser.js"
       ]
     }
   ]
